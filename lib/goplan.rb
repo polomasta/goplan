@@ -57,4 +57,6 @@ end
 
 directory = File.expand_path(File.dirname(__FILE__))
 
+Hash.send :include, Hashie::HashExtensions
+
 require File.join(directory, 'go_plan', 'client')
