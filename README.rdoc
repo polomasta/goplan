@@ -1,6 +1,8 @@
 = goplan
 
-Description goes here.
+Ruby wrapper for the GoPlan API
+
+https://goplanapp.com/api/docs
 
 == Note on Patches/Pull Requests
  
