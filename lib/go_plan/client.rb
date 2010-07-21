@@ -1,4 +1,4 @@
-module Goplan
+module GoPlan
   class UnexpectedResponseError < RuntimeError
   end
   
@@ -13,16 +13,22 @@ module Goplan
   end
   
   class Client
+    include HTTParty
     
-    attr_reader :ctoken, :csecret, :consumer_options
+    parser GoPlan::Parser
+    headers 'Content-Type' => 'application/json' 
+        
+    attr_reader :ctoken, :csecret, :consumer_options, :company_alias
     
-    def initialize(ctoken=GoPlan.token, csecret=GoPlan.secret, options={})
+    def initialize(ctoken=GoPlan.token, csecret=GoPlan.secret, company_alias, options={})
       opts = { 
               #:request_token_path => "/uas/oauth/requestToken",
               #:access_token_path  => "/uas/oauth/accessToken",
               :authorize_path     => "/oauth/authorize"
             }
       @ctoken, @csecret, @consumer_options = ctoken, csecret, opts.merge(options)
+      @company_alias = company_alias
+      self.class.base_uri "http://#{@company_alias}.goplanapp.com"
     end
     
     def consumer
@@ -56,7 +62,15 @@ module Goplan
     def authorize_from_access(atoken, asecret)
       @atoken, @asecret = atoken, asecret
     end
-  
-  
+    
+    #options: 
+    #   id => number of items to return, defaults to 100
+    #   project => project alias (alias of a specific project) - not mandatory, defaults to company scope
+    
+    def activiy(options={})
+      activities = get("/activites/get_all.json", :query => options)
+      acitivities.map{|a| Hashie::Mash.new c['activity']}
+    end
+  end
   
 end

@@ -57,17 +57,4 @@ end
 
 directory = File.expand_path(File.dirname(__FILE__))
 
-require File.join(directory, 'go_plan', 'api_standard_profile_request')
-require File.join(directory, 'go_plan', 'url_resource')
-require File.join(directory, 'go_plan', 'company')
-require File.join(directory, 'go_plan', 'country')
-require File.join(directory, 'go_plan', 'education')
-require File.join(directory, 'go_plan', 'error')
-require File.join(directory, 'go_plan', 'location')
-require File.join(directory, 'go_plan', 'position')
-require File.join(directory, 'go_plan', 'profile')
-require File.join(directory, 'go_plan', 'update')
-require File.join(directory, 'go_plan', 'network')
-require File.join(directory, 'go_plan', 'people')
-require File.join(directory, 'go_plan', 'connections')
 require File.join(directory, 'go_plan', 'client')
