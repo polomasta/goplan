@@ -6,7 +6,7 @@ begin
   Jeweler::Tasks.new do |gem|
     gem.name = "goplan"
     gem.summary = %Q{Ruby wrapper for the GoPlan API}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.description = %Q{Ruby wrapper for the GoPlan API}
     gem.email = "brad@bradleyjoyce.com"
     gem.homepage = "http://github.com/polomasta/goplan"
     gem.authors = ["Bradley Joyce"]
