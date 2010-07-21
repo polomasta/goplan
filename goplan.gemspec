@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Bradley Joyce"]
   s.date = %q{2010-07-21}
-  s.description = %q{TODO: longer description of your gem}
+  s.description = %q{Ruby wrapper for the GoPlan API}
   s.email = %q{brad@bradleyjoyce.com}
   s.extra_rdoc_files = [
     "LICENSE",
@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
      "README.rdoc",
      "Rakefile",
      "VERSION",
+     "goplan.gemspec",
      "lib/go_plan/client.rb",
      "lib/goplan.rb",
      "test/helper.rb",
